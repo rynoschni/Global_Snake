@@ -25,10 +25,16 @@ body {
     padding: 0;
 }
 
-#map {
-    height: 300px;
-    width: 300px;
+.map {
+    height: 250px;
+    width: 100%;
 }
+
+.flag {
+    height: 200px;
+    width: auto;
+}
+
 
 .container{
     max-width: 317px;
@@ -36,18 +42,20 @@ body {
 }
 
 .match-list{
-    background-color: rgba(199, 197, 197, 0.5);
-    color: black;
+    background-color: rgba(16, 16, 16, 0.753);
+    color: white;
+    display:
     font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 
 
 .match-list > div:hover{
-    background-color:rgba(0,209,178,0.9);
+    background-color:rgb(145, 223, 117);
+    color: black;
     cursor: pointer;
     border-radius:5px;
-    text-align: left;
+    /* text-align: left; */
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
 }
 
@@ -125,8 +133,9 @@ a:hover {
     font-weight: 700;
 }
 
-.logo{
-    background-image: ('/images/Logo-holder.png');
+.jumbotron{
+    background-image: url('/images/Logo-holder.png');
+    background-color: #333;
     
 }
 
