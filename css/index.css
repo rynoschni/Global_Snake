@@ -23,6 +23,30 @@ body {
     font-size: 1rem;
     margin: 0;
     padding: 0;
+}
+
+#map {
+    height: 300px;
+    width: 300px;
+}
+
+.container{
+    max-width: 317px;
+    margin:10px;
+}
+
+.match-list{
+    background-color: rgba(199, 197, 197, 0.5);
+    color: black;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+
+
+.match-list > div:hover{
+    background-color:rgba(0,209,178,0.9);
+    cursor: pointer;
+    border-radius:5px;
     text-align: left;
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
 }
@@ -102,7 +126,7 @@ a:hover {
 }
 
 .logo{
-    background-image: '/images/Logo-holder.png');
+    background-image: ('/images/Logo-holder.png');
     
 }
 
