@@ -1,4 +1,5 @@
 "use strict";
+
 const searchCountry = document.getElementById("searchCountry");
 const matchList = document.getElementById("matchList");
 const submitButton = document.getElementById("submitButton");
@@ -42,6 +43,15 @@ const clickedMatch = (matches) => {
     suggestMatch.addEventListener("click", function (event) {
       event.preventDefault();
       searchCountry.value = suggestMatch.innerHTML;
+      matchList.classList.toggle("hide");  //Ryan Add to hide search box
+    });
+    searchCountry.addEventListener("keydown", function(event) {  //Ryan Reopen search list on backspace
+      if (event.key === "Backspace" || event.key === "Delete") {
+        matchList.classList.remove("hide");
+      }
+    });
+    searchCountry.addEventListener("click", function(event) {  //Ryan Reopen search list on backspace
+      matchList.classList.remove("hide");
     });
   });
 };
@@ -135,3 +145,7 @@ submitButton.addEventListener("click", function (event) {
     outputList.appendChild(newListitem4);
   });
 });
+
+console.log("Awesomeness Loaded!!!!!")
+console.log("Designed by Team H-Town!")
+console.log("See About Us!")

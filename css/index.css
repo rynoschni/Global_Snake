@@ -5,6 +5,8 @@
     box-sizing: border-box;
 }
 
+
+
 /*
  * Base structure
  */
@@ -25,46 +27,25 @@ body {
     padding: 0;
 }
 
-.map {
-    height: 250px;
-    width: 100%;
+li{
+    text-align: left;
+}
+li.none{
+    list-style-type: none;
 }
 
-.flag {
-    height: 200px;
-    width: auto;
-}
-
-
-.container{
-    max-width: 317px;
-    margin:10px;
-}
-
-.match-list{
-    background-color: rgba(16, 16, 16, 0.753);
-    color: white;
-    display:
-    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-
-
-
-.match-list > div:hover{
-    background-color:rgb(145, 223, 117);
-    color: black;
-    cursor: pointer;
-    border-radius:5px;
-    /* text-align: left; */
-    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-}
-
-/* Links */
+/* Links/Actions */
 a,
 a:focus,
 a:hover {
     color: #fff;
 }
+
+.hide{
+    display: none;
+}
+
+
 
 /* Custom default button */
 .btn-secondary,
@@ -77,7 +58,8 @@ a:hover {
 }
 
 .cover-container {
-    max-width: 42em;
+    max-width: 60em;
+
 }
 
 /*
@@ -89,6 +71,7 @@ a:hover {
 
 .masthead-brand {
     margin-bottom: 0;
+    
 }
 
 .nav-masthead .nav-link {
@@ -133,10 +116,94 @@ a:hover {
     font-weight: 700;
 }
 
-.jumbotron{
-    background-image: url('/images/Logo-holder.png');
-    background-color: #333;
-    
+.jumbotron2 {
+    background-image: url('../images/Logo-holder-2.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 0.3rem;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;    
+}
+
+@media (min-width: 576px) {
+    .jumbotron2 {
+    padding: 4rem 2rem;
+    }
+}
+
+.jumbotron2-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 0;
+}
+
+.hero-img{
+    background-image: url('../images/138.jpeg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 0.3rem;
+    height: 400px;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+.hero-img2{
+    background-image: url('../images/h-town.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 0.3rem;
+    height: 400px;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.img-thumbnail {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Main */
+.map {
+    height: 250px;
+    width: 100%;
+}
+
+.flag {
+    height: 200px;
+    width: auto;
+}
+
+
+.container{
+    max-width: 317px;
+    margin:10px;
+}
+
+.match-list{
+    background-color: rgba(16, 16, 16, 0.753);
+    border-radius: .3rem;
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+    color: white;
+    display:
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.match-list > div:hover{
+    background-color:rgb(145, 223, 117);
+    color: black;
+    cursor: pointer;
+    border-radius:5px;
+    /* text-align: left; */
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+.modal-header{
+    background-color: rgba(16, 16, 16, 0.753);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5)
+}
+.modal-body{
+    color: rgb(16,16,16);
+    text-align: right;
 }
 
 /*
@@ -148,4 +215,8 @@ a:hover {
 
 .snakeColor{
     color: rgb(145, 223, 117);
+}
+.snakeButton{
+    background-color: rgb(145, 223, 117);
+    border-radius: .3rem;
 }
