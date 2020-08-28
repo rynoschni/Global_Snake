@@ -3,7 +3,7 @@
 
 
 const searchCountry = document.getElementById("searchCountry");
-let countryName = document.getElementById("countryName");
+let countryName = document.querySelectorAll("#countryName");
 let dataList = document.getElementById("data-list");
 let outputList = document.getElementById("output");
 let weatherButton = document.getElementById("weatherButton");
@@ -45,6 +45,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const url = `https://restcountries.eu/rest/v2/name/${name}`;
   get(url).then(function (response) {
     //re-assign the lat/long from response
+    countryName.innerHTML = name;
+    console.log('The Name is: ', name)
+    console.log("The Country Name is:", countryName)
+    let titleName = document.getElementById('titleName');
+    titleName.innerHTML = "Welcome to " + name + "!";
+    let heroName = document.getElementById('heroName');
+    heroName.innerHTML = name;
+    
     let lead = document.getElementById('lead');
     countryName.innerHtml = name;
     lead.innerHTML = "Welcome to " + decodeURI(name);
@@ -100,30 +108,37 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     // DOM Manipulation
     const newListitem1 = document.createElement("li");
+    newListitem1.classList.add('none');
     newListitem1.innerHTML = "Latitude: " + latitude;
     outputList.appendChild(newListitem1);
     const newListitem6 = document.createElement("li");
+    newListitem6.classList.add('none');
     newListitem6.innerHTML = "Longtitude: " + longitude;
     outputList.appendChild(newListitem6);
     const newListitem7 = document.createElement("li");
+    newListitem7.classList.add('none');
     newListitem7.innerHTML = "Calling code: " + callingCode;
     outputList.appendChild(newListitem7);
     const newListitem8 = document.createElement("li");
     newListitem8.innerHTML = "Population: " + Population.toLocaleString();
     outputList.appendChild(newListitem8);
     const newListitem9 = document.createElement("li");
+    newListitem9.classList.add('none');
     newListitem9.innerHTML = "Sub-region: " + Subregion;
     outputList.appendChild(newListitem9);
     // Capital
     const newListitem2 = document.createElement("li");
+    newListitem2.classList.add('none');
     newListitem2.innerHTML = "Capital: " + capital;
     outputList.appendChild(newListitem2);
     // currency
     const newListitem3 = document.createElement("li");
+    newListitem3.classList.add('none');
     newListitem3.innerHTML = "Currency: " + currency;
     outputList.appendChild(newListitem3);
     // language
     const newListitem4 = document.createElement("li");
+    newListitem4.classList.add('none');
     newListitem4.innerHTML = "Language: " + language;
     outputList.appendChild(newListitem4);
   });

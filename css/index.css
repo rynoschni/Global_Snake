@@ -14,7 +14,7 @@ html,
 body {
     font-size: 16px;
     height: 100%;
-    background-color: rgba(16, 16, 16, 0.753);
+    background-color: rgb(32, 31, 31);
 }
 
 body {
@@ -27,12 +27,16 @@ body {
     padding: 0;
 }
 
+.bio{
+    margin-bottom: .25rem;
+}
 li{
     text-align: left;
 }
 li.none{
     list-style-type: none;
 }
+
 
 /* Links/Actions */
 a,
@@ -58,7 +62,8 @@ a:hover {
 }
 
 .cover-container {
-    max-width: 60em;
+    max-width: 45rem;
+
 
 }
 
@@ -105,6 +110,8 @@ a:hover {
     }
 }
 
+
+
 /*
  * Cover
  */
@@ -116,8 +123,16 @@ a:hover {
     font-weight: 700;
 }
 
+/* .jumbotron {
+    background-image : url(../images/Logo-Global-Snake2.png);
+    background-position: center;
+    background-color: rgb(32, 31, 31);
+    background-repeat : no-repeat;
+    background-size: contain;
+} */
+
 .jumbotron2 {
-    background-image: url('../images/Logo-holder-2.png');
+    background-image: url('../images/Logo-Global-Snake2.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -160,9 +175,10 @@ a:hover {
 .hero-img2{
     background-image: url('../images/h-town.jpg');
     background-position: center;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
     border-radius: 0.3rem;
-    height: 400px;
+    min-height: 320px;
     padding: 2rem 1rem;
     margin-bottom: 2rem;
 }
@@ -185,17 +201,15 @@ a:hover {
 }
 
 
-.container{
-    max-width: 317px;
-    margin:10px;
-}
+/* .container{
+    justify-content: center;
+} */
 
 .match-list{
-    background-color: rgba(16, 16, 16, 0.753);
+    background-color: rgb(32, 31, 31);
     border-radius: .3rem;
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
     color: white;
-    display:
     font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
@@ -209,7 +223,7 @@ a:hover {
 }
 
 .modal-header{
-    background-color: rgba(16, 16, 16, 0.753);
+    background-color: rgb(32, 31, 31);
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5)
 }
 .modal-body{
@@ -217,13 +231,7 @@ a:hover {
     text-align: right;
 }
 
-.jumbotron {
-    background-image : url(../images/Logo-Global-Snake2.png);
-    background-position: center;
-    background-color: rgb(32, 31, 31);
-    background-repeat : no-repeat;
-    background-size: contain;
-}
+
 
 .btn {
     color: rgb(145, 223, 117);
@@ -234,6 +242,7 @@ a:hover {
  */
 .mastfoot {
     color: rgba(255, 255, 255, .5);
+    text-align: center;
 }
 
 .snakeColor{
