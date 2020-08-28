@@ -1,11 +1,20 @@
 "use strict";
+
+
+
 const searchCountry = document.getElementById("searchCountry");
 let countryName = document.getElementById("countryName");
 let dataList = document.getElementById("data-list");
 let outputList = document.getElementById("output");
+let weatherButton = document.getElementById("weatherButton");
+let weatherOutput = document.getElementById('weatherOutput');
+let cardTitle = document.getElementById('cardTitle');
+
+
 
 // This is the original map when page loads
 let map;
+let marker;
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 0, lng: 20 },
@@ -14,27 +23,31 @@ function initMap() {
 }
 
 //get query string, used to find the country name in the HTML string
-function getQueryVariable(variable)
-{
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  }
+  return false;
 }
 
 // Get the country name from the index.html page
 var name = getQueryVariable("name");
+
 //Event listner for DOM content, when the page loads
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener("DOMContentLoaded", (event) => {
   console.log(name);
   // uses GET to access the API
   const url = `https://restcountries.eu/rest/v2/name/${name}`;
   get(url).then(function (response) {
     //re-assign the lat/long from response
-    countryName.innerHTML = name;
+    let lead = document.getElementById('lead');
+    countryName.innerHtml = name;
+    lead.innerHTML = "Welcome to " + decodeURI(name);
     let latitude = response[0].latlng[0];
     let longitude = response[0].latlng[1];
     let capital = response[0].capital;
@@ -53,12 +66,37 @@ window.addEventListener('DOMContentLoaded', (event) => {
     flagId.src = response[0].flag;
 
     // Creating new map off of API query
+    const weatherInfo = get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=e58d1190d081f10a3da11806b105613b&units=imperial`
+    );
+    weatherInfo.then((response) => {
+      console.log(response);
+      const capitalWeather = document.getElementById('capitalWeather');
+      capitalWeather.innerHTML = "The Weather for " + response.name + ', ' + decodeURI(name) + ':';
+      weatherImage.src = `icons/${response.weather[0].icon}.png`;
+      let capitalName = response.name;
+      let temperature = response.main.temp;
+      let feelsLike = response.main.feels_like;
+      let humidity = response.main.humidity;
+      
+      let weatherItem1 = document.createElement("li");
+      weatherItem1.innerHTML = "Temperature is: " + temperature.toFixed() + " ℉	";
+      weatherOutput.appendChild(weatherItem1);
+      let weatherItem2 = document.createElement("li");
+      weatherItem2.innerHTML = "Temperature feels like is: " + feelsLike.toFixed() + " ℉	";
+      weatherOutput.appendChild(weatherItem2);
+      let weatherItem3 = document.createElement("li");
+      weatherItem3.innerHTML = "Humidity is: " + humidity + " %";
+      weatherOutput.appendChild(weatherItem3);
+    });
     // APi query reponse items
     // Name, capital, latlng, currencies.name, languages.name, flag, callingCodes, population, subregion
+    var position = {lat: latitude, lng: longitude};
     map = new google.maps.Map(document.getElementById("map"), {
       center: { lat: latitude, lng: longitude },
       zoom: 4,
     });
+    marker = new google.maps.Marker({position: position, map: map});
 
     // DOM Manipulation
     const newListitem1 = document.createElement("li");
@@ -71,7 +109,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     newListitem7.innerHTML = "Calling code: " + callingCode;
     outputList.appendChild(newListitem7);
     const newListitem8 = document.createElement("li");
-    newListitem8.innerHTML = "Population: " + Population;
+    newListitem8.innerHTML = "Population: " + Population.toLocaleString();
     outputList.appendChild(newListitem8);
     const newListitem9 = document.createElement("li");
     newListitem9.innerHTML = "Sub-region: " + Subregion;
@@ -88,5 +126,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const newListitem4 = document.createElement("li");
     newListitem4.innerHTML = "Language: " + language;
     outputList.appendChild(newListitem4);
+  });
+  // getPexel(name)
 });
-});
+// const proxy = 'https://cors-anywhere.herokuapp.com/';
+// const getPexel = (name) => {
+//   fetch(`${proxy}http://api.pexels.com/v1/${name}`, {
+//     headers:{
+//       'Authorization': '563492ad6f91700001000001fd27eec53df544ec959a1d51252c000e'
+//     }
+//   })
+//     .then(response => response.json())
+//     .then(response => console.log(response))
+  
+// }
+// const temperature = response.main.temp;
+// const feelsLike = response.main.feels_like;
+// const humidity = repsonse.main.humidity;
+// Weather information
+// openweather api key = e58d1190d081f10a3da11806b105613b
+
+
+//Pexel Key
+//563492ad6f91700001000001fd27eec53df544ec959a1d51252c000e 
