@@ -5,12 +5,18 @@ const submitButton = document.getElementById("submitButton");
 const matchList = document.getElementById("matchList");
 
 // Add event listner to the Submit button
-submitButton.addEventListener('click', function (event) {
+submitButton.addEventListener("click", function (event) {
   event.preventDefault();
   var windowFeatures = "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0"
   var name = searchCountry.value;
-  window.name='main'
-  window.open("mappage.html?name=" + encodeURI(name), 'main', windowFeatures);
+  if (name != "") {
+    var windowFeatures =
+      "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
+    window.name = "main";
+    window.open("mappage.html?name=" + encodeURI(name), "main", windowFeatures);
+  } else {
+    alert("Please enter a country");
+  }
 });
 
 //Function to access API, filter results and assign value to DOM
