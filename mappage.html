@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title id="countryName"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- <link
@@ -13,51 +13,60 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
+    <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead">
           <div class="inner">
               <h3 class="masthead-brand">Global <span class="snakeColor">Snake</span></h3>
               <nav class="nav nav-masthead justify-content-center">
-                  <a class="nav-link active" href="#">Home</a>
-                  <!-- <a class="nav-link" href="#">Features</a>
-                  <a class="nav-link" href="#">Contact</a> -->
+                  <a class="nav-link active" href="/FrontEnd/TeamHTownProject/index.html">Home</a>
+                  <a class="nav-link" href="#">Features</a>
+                  <a class="nav-link" href="/FrontEnd/TeamHTownProject/about-us.html">About Us</a>
               </nav>
           </div>
       </header>
-  <div>
-    <!-- Hero -->
-  <div class="jumbotron text-center">
-    <h2 class="">Welcome to</h2>
-    <h1 id="countryName"></h1>
-  </div>
-  <!-- main -->
-  <div class="form-group">
-    <form>
-        <input id="searchCountry" class="form-control my-sm-3" type="search" placeholder="Search" aria-label="Search">
-        <div class="match-list" id="matchList"></div>
-        <button id="submitButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-  <main>
-    <div class="container-fluid">
-      <div class="row">
-      <div class="col-sm"><img id="flag" class="flag" src = "" /></div>
-      <div id="data-list" class="col-sm">
-          <p id="countryName"></p>
-          <ul id="output">
-              
-          </ul>
+    
+      
+        <!-- Hero -->
+        <div id='heroImg' class="hero-img text-center container-fluid">
+          <p class="lead">Welcome to <span class="snakeColor countryName"></span>!</p>
+        </div>
+      <div class="cover-container container-fluid">
+      <!-- main -->
+        <div class="form-group">
+          <form>
+              <input id="searchCountry" class="form-control my-sm-3" type="search" placeholder="Search" aria-label="Search">
+              <div class="match-list" id="matchList"></div>
+              <button id="submitButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+        <main>
+          <div class="container-fluid">
+            <div class="row">
+            <div class="col-sm"><img id="flag" class="flag" src = "" /></div>
+            <div id="data-list" class="col-sm">
+                <p id="countryName"></p>
+                <ul id="output">
+                    
+                </ul>
+            </div>
+          </div>
+          </div>
+          <div id="map" class="map"></div>
+        </main>
+      <!-- footer -->
+        <footer class="mastfoot mt-auto">
+          <div class="inner">
+              <p>Created with <a href="https://getbootstrap.com/">Bootstrap</a>, by Team H-Town</p>
+          </div>
+        </footer>
       </div>
     </div>
-    </div>
-    <div id="map" class="map"></div>
-  </main>
   </body>
   <script
     defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjfsBIH4TwxsEDAV-nFdUdL0UJySGp5AM&callback=initMap"
   ></script>
   <script src="js/get.js"></script>
-  <script src="js/index.js"></script>
+   <script src="js/mappage.js"></script>
   
 </html>
