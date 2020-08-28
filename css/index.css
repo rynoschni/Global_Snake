@@ -37,6 +37,10 @@ li.none{
     list-style-type: none;
 }
 
+ul{
+    list-style-type: none;
+}
+
 
 /* Links/Actions */
 a,
@@ -255,8 +259,10 @@ a:hover {
 
 .card {
     background-color: #333;
+    width: 100%;
 }
 .card-body {
     display: flex;
     justify-content: center;
+    align-items:center;
 }

@@ -49,13 +49,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
     console.log('The Name is: ', name)
     console.log("The Country Name is:", countryName)
     let titleName = document.getElementById('titleName');
-    titleName.innerHTML = "Welcome to " + name + "!";
+    titleName.innerHTML = "Welcome to " + decodeURI(name) + "!";
     let heroName = document.getElementById('heroName');
-    heroName.innerHTML = name;
+
     
-    let lead = document.getElementById('lead');
+    
     countryName.innerHtml = name;
-    lead.innerHTML = "Welcome to " + decodeURI(name);
+    heroName.innerHTML = "Welcome to " + decodeURI(name) + "!";
     let latitude = response[0].latlng[0];
     let longitude = response[0].latlng[1];
     let capital = response[0].capital;
@@ -121,6 +121,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     outputList.appendChild(newListitem7);
     const newListitem8 = document.createElement("li");
     newListitem8.innerHTML = "Population: " + Population.toLocaleString();
+    newListitem8.classList.add('none');
     outputList.appendChild(newListitem8);
     const newListitem9 = document.createElement("li");
     newListitem9.classList.add('none');
