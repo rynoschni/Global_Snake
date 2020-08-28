@@ -2,6 +2,7 @@
 <html>
   <head>
     <title id="countryName"></title>
+    <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- <link
@@ -16,27 +17,27 @@
     <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead">
           <div class="inner">
-              <h3 class="masthead-brand">Global <span class="snakeColor">Snake</span></h3>
+              <a href = "index.html"><h3 class="masthead-brand">Global <span class="snakeColor">Snake</span></h3></a>
               <nav class="nav nav-masthead justify-content-center">
-                  <a class="nav-link active" href="/FrontEnd/TeamHTownProject/index.html">Home</a>
-                  <a class="nav-link" href="#">Features</a>
-                  <a class="nav-link" href="/FrontEnd/TeamHTownProject/about-us.html">About Us</a>
+                  <a class="nav-link active" href="index.html">Home</a>
+                  <a class="nav-link" href="mappage.html">Features</a>
+                  <a class="nav-link" href="about-us.html">About Us</a>
               </nav>
           </div>
       </header>
-    
+      
       
         <!-- Hero -->
-        <div id='heroImg' class="hero-img text-center container-fluid">
-          <p class="lead">Welcome to <span class="snakeColor countryName"></span>!</p>
+        <div id="hero-img" class="hero-img text-center container-fluid">
+          <h1 class="lead" id='lead'>Welcome to</h1>
         </div>
       <div class="cover-container container-fluid">
       <!-- main -->
         <div class="form-group">
           <form>
-              <input id="searchCountry" class="form-control my-sm-3" type="search" placeholder="Search" aria-label="Search">
+              <!-- <input id="searchCountry" class="form-control my-sm-3" type="search" placeholder="Search" aria-label="Search">
               <div class="match-list" id="matchList"></div>
-              <button id="submitButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              <button id="submitButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
           </form>
         </div>
         <main>
@@ -52,6 +53,18 @@
           </div>
           </div>
           <div id="map" class="map"></div>
+          <div class="card">
+            <div class="card-header" id='cardName'>
+              <p id='capitalWeather'></p>
+            </div>
+            <div class="card-body">
+              <img class="card-title" id='weatherImage' src="">
+              <ul id="weatherOutput">
+                
+              </ul>
+            </div>
+          </div>
+          
         </main>
       <!-- footer -->
         <footer class="mastfoot mt-auto">
