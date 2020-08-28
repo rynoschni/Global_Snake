@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title id="countryName"></title>
+    <title id="titleName"></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- <link
@@ -11,6 +11,7 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.css"
     /> -->
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="shortcut icon"tra href="favicon.ico"/>
   </head>
   <body>
     <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
@@ -18,9 +19,9 @@
           <div class="inner">
               <h3 class="masthead-brand">Global <span class="snakeColor">Snake</span></h3>
               <nav class="nav nav-masthead justify-content-center">
-                  <a class="nav-link active" href="/FrontEnd/TeamHTownProject/index.html">Home</a>
-                  <a class="nav-link" href="#">Features</a>
-                  <a class="nav-link" href="/FrontEnd/TeamHTownProject/about-us.html">About Us</a>
+                  <a class="nav-link active" href="index.html">Home</a>
+                  <a class="nav-link" data-toggle="modal" data-target="#staticBackdrop">Features</a>
+                  <a class="nav-link" href="about_us2.html">About Us</a>
               </nav>
           </div>
       </header>
@@ -28,16 +29,10 @@
       
         <!-- Hero -->
         <div id='heroImg' class="hero-img text-center container-fluid">
-          <p class="lead">Welcome to <span class="snakeColor countryName"></span>!</p>
+          <p class="lead">Welcome to <span id="heroName" class="snakeColor"></span>!</p>
         </div>
       <div class="cover-container container-fluid">
       <!-- main -->
-        <div class="form-group">
-          <form>
-              <input id="searchCountry" class="form-control my-sm-3" type="search" placeholder="Search" aria-label="Search">
-              <div class="match-list" id="matchList"></div>
-              <button id="submitButton" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
         </div>
         <main>
           <div class="container-fluid">
@@ -48,6 +43,17 @@
                 <ul id="output">
                     
                 </ul>
+            </div>
+            <div class="card">
+              <div class="card-header" id='cardName'>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" id='cardTitle'>Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <ul id="weatherOutput">
+                  
+                </ul>
+              </div>
             </div>
           </div>
           </div>
@@ -70,3 +76,4 @@
    <script src="js/mappage.js"></script>
   
 </html>
+
