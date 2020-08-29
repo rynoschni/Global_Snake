@@ -25,6 +25,14 @@ body {
     padding: 0;
 }
 
+.snakeColor{
+    color: rgb(145, 223, 117);
+}
+.bio{
+    margin-bottom: .25rem;
+}
+
+
 /* Links/Actions */
 a,
 a:focus,
@@ -32,9 +40,6 @@ a:hover {
     color: #fff;
 }
 
-.snakeColor{
-    color: rgb(145, 223, 117);
-}
 
 
 /* Custom button */
@@ -105,71 +110,31 @@ a:hover {
 /*
  * Cover
  */
-.cover {
-    padding: 0 1.5rem;
-}
-.cover .btn-lg {
-    padding: .75rem 1.25rem;
-    font-weight: 700;
-}
-
 .cover-container {
-    max-width: 45rem;
-}
-
-.jumbotron2 {
-    background-image: url('../images/Logo-Global-Snake2.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    border-radius: 0.3rem;
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;    
-}
-
-@media (min-width: 576px) {
-    .jumbotron2 {
-    padding: 4rem 2rem;
-    }
-}
-
-.jumbotron2-fluid {
-    padding-right: 0;
-    padding-left: 0;
-    border-radius: 0;
+    max-width: 60rem;
+    text-align: center;
 }
 
 .hero-img{
-    background-image: url('../images/globe.jpeg');
+    background-image: url('../images/h-town.jpg');
     background-position: center;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
     border-radius: 0.3rem;
-    display: flex;
-    height: 400px;
-    justify-content: center;
-    align-items: center;
+    min-height: 320px;
     padding: 2rem 1rem;
     margin-bottom: 2rem;
 }
 
-
-/* Main */
-
-.match-list{
-    background-color: rgb(32, 31, 31);
-    border-radius: .3rem;
-    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-    color: white;
-    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+.img-thumbnail {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: .5rem;
 }
 
-.match-list > div:hover{
-    background-color:rgb(145, 223, 117);
-    color: black;
-    cursor: pointer;
-    border-radius:5px;
-    /* text-align: left; */
-    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+/* Main */
+.col-lg-3{
+        text-align: center;
 }
 
 .modal-header{
@@ -182,7 +147,6 @@ a:hover {
 }
 
 
-
 /*
  * Footer
  */
@@ -190,5 +154,4 @@ a:hover {
     color: rgba(255, 255, 255, .5);
     text-align: center;
 }
-
 
