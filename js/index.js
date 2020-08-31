@@ -3,6 +3,7 @@
 const searchCountry = document.getElementById("searchCountry");
 const submitButton = document.getElementById("submitButton");
 const matchList = document.getElementById("matchList");
+const randomCountryButton = document.getElementById("randomCountry");
 
 // Add event listner to the Submit button
 submitButton.addEventListener("click", function (event) {
@@ -84,6 +85,31 @@ const outputHtml = (matches) => {
 searchCountry.addEventListener("keyup", () =>
   getCountries(searchCountry.value)
 );
+
+randomCountryButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  const randomCountryUrl = `https://restcountries.eu/rest/v2/all?fields=name`;
+  get(randomCountryUrl).then(function (response) {
+    let nameArray = response;
+    let randomCountry = nameArray[Math.floor(Math.random() * nameArray.length)];
+    let randomCountryName = randomCountry.name;
+    var windowFeatures =
+      "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
+    var name = randomCountryName;
+    if (name != "") {
+      var windowFeatures =
+        "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
+      window.name = "main";
+      window.open(
+        "mappage.html?name=" + encodeURI(name),
+        "main",
+        windowFeatures
+      );
+    } else {
+      alert("Please enter a country");
+    }
+  });
+});
 
 console.log("Global Snake Awesomeness Loaded!!!!!")
 console.log("Designed by Team H-Town!")

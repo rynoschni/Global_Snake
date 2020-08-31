@@ -4,6 +4,8 @@
 
 const searchCountry = document.getElementById("searchCountry");
 let countryName = document.querySelectorAll("#countryName");
+const heroImg = document.getElementById("heroImg");
+const photoName = document.getElementById("photoName");
 let dataList = document.getElementById("data-list");
 let outputList = document.getElementById("output");
 let weatherButton = document.getElementById("weatherButton");
@@ -145,9 +147,44 @@ window.addEventListener("DOMContentLoaded", (event) => {
     newListitem4.classList.add('none');
     newListitem4.innerHTML = "Language: " + language;
     outputList.appendChild(newListitem4);
+
   });
-  // getPexel(name)
+
+  //On document ready, we will change the background picture of the hero element with image from Pexels
+  // titleName.innerHTML
+  var api_key = '563492ad6f91700001000001fd27eec53df544ec959a1d51252c000e';
+  // What we would like to search Pexels API for
+  var search = name;
+  var imageUrl='hello';
+  // Using the GET method to pass authorization and obtain url and photogrpaher name from Pexels
+  imageSearch (api_key,search);
+  
 });
+
+function imageSearch (api_key,search) {
+  $.ajax({
+    method: 'GET',
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader ("Authorization", api_key);
+    },
+    url: "https://api.pexels.com/v1/search?query="+search+"&per_page=1&page=1",
+    success: function(data){
+      // console.log(data)
+      console.log('photo url: ',data.photos[0].src.landscape)
+      // console.log('photo url: ',data.photos[0].photographer)
+      heroImg.style.backgroundImage = `url(${data.photos[0].src.landscape})`
+      photoName.innerHTML = "Photo by: " + `${data.photos[0].photographer}`
+      
+    
+    },
+    error: function(error){
+      console.log(error)
+    },
+    
+    
+})
+
+}
 // const proxy = 'https://cors-anywhere.herokuapp.com/';
 // const getPexel = (name) => {
 //   fetch(`${proxy}http://api.pexels.com/v1/${name}`, {

@@ -22,31 +22,36 @@
       
       
         <!-- Hero -->
-        <div id='heroImg' class="hero-img text-center container-fluid">
-          <h1 id="heroName" class="snakeColor"></h1>
+        <div class="container">
+          <div id="heroImg" class="hero-img text-center container-fluid">
+            <h1 id="heroName" class="snakeColor"></h1>
+          </div>
+           <p id = "photoName"></p>
         </div>
+       
       <!-- main -->
         <main>
-          <div class="container-fluid">
-            <div class="row">
-            <div class="col-sm"><img id="flag" class="flag" src = "" /></div>
-            <div id="data-list" class="col-sm">
-                <p id="countryName"></p>
-                <ul id="output">
-                    
+          <div class="container">
+              <div class="row">
+              <div class="col-sm"><img id="flag" class="flag" src = "" /></div>
+              <div id="data-list" class="col-sm">
+                  <p id="countryName"></p>
+                  <ul id="output">
+                      
+                  </ul>
+              </div>
+              
+            <div id="map" class="map"></div>
+            <div class="card">
+              <div class="card-header snakeColor" id='cardName'>
+                <p id='capitalWeather'></p>
+              </div>
+              <div class="card-body">
+                <img class="card-title" id='weatherImage' src="">
+                <ul id="weatherOutput">
+                  
                 </ul>
-            </div>
-            
-          <div id="map" class="map"></div>
-          <div class="card">
-            <div class="card-header snakeColor" id='cardName'>
-              <p id='capitalWeather'></p>
-            </div>
-            <div class="card-body">
-              <img class="card-title" id='weatherImage' src="">
-              <ul id="weatherOutput">
-                
-              </ul>
+              </div>
             </div>
           </div>
           
@@ -92,6 +97,7 @@
   ></script>
   <script src="js/get.js"></script>
   <script src="js/mappage.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   
 </html>
 
