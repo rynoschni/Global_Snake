@@ -56,8 +56,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     
     
-    countryName.innerHtml = name;
-    heroName.innerHTML = "Welcome to " + decodeURI(name) + "!";
+    
+    if(name.includes("%20")) {
+      heroName.innerHTML = "Welcome to The " + decodeURI(name) + "!";
+    } else {
+      heroName.innerHTML = "Welcome to " + decodeURI(name) + "!";
+    }
     let latitude = response[0].latlng[0];
     let longitude = response[0].latlng[1];
     let capital = response[0].capital;
@@ -155,13 +159,20 @@ window.addEventListener("DOMContentLoaded", (event) => {
   var api_key = '563492ad6f91700001000001fd27eec53df544ec959a1d51252c000e';
   // What we would like to search Pexels API for
   var search = name;
-  var imageUrl='hello';
+  // Handling Fringe Cases for Pexel Photos
+  if (name == 'United%20States%20of%20America'){
+    search  = 'Lincoln'
+  }
+  if (name == 'Palestine,%20State%20of'){
+    search  = ''
+  }
   // Using the GET method to pass authorization and obtain url and photogrpaher name from Pexels
   imageSearch (api_key,search);
   
 });
 
 function imageSearch (api_key,search) {
+ 
   $.ajax({
     method: 'GET',
     beforeSend: function (xhr) {
@@ -169,19 +180,12 @@ function imageSearch (api_key,search) {
     },
     url: "https://api.pexels.com/v1/search?query="+search+"&per_page=1&page=1",
     success: function(data){
-      // console.log(data)
-      console.log('photo url: ',data.photos[0].src.landscape)
-      // console.log('photo url: ',data.photos[0].photographer)
       heroImg.style.backgroundImage = `url(${data.photos[0].src.landscape})`
       photoName.innerHTML = "Photo by: " + `${data.photos[0].photographer}`
-      
-    
     },
     error: function(error){
       console.log(error)
     },
-    
-    
 })
 
 }

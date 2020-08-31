@@ -1,103 +1,112 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title id="titleName"></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/mappage.css" />
-    <link rel="shortcut icon"tra href="favicon.ico"/>
-  </head>
-  <body>
-    <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead">
-          <div class="inner">
-              <a href = "index.html"><h3 class="masthead-brand">Global <span class="snakeColor">Snake</span></h3></a>
-              <nav class="nav nav-masthead justify-content-center">
-                  <a class="nav-link active" href="index.html">Home</a>
-                  <a class="nav-link" data-toggle="modal" data-target="#staticBackdrop">Features</a>
-                  <a class="nav-link" href="about_us.html">About Us</a>
-              </nav>
+
+<head>
+  <title id="titleName"></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/mappage.css" />
+  <link rel="shortcut icon" tra href="favicon.ico" />
+</head>
+
+<body>
+  <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead">
+      <div class="inner">
+        <a href="index.html">
+          <h3 class="masthead-brand">Global <span class="snakeColor">Snake</span></h3>
+        </a>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="index.html">Home</a>
+          <a class="nav-link" data-toggle="modal" data-target="#staticBackdrop">Features</a>
+          <a class="nav-link" href="about_us.html">About Us</a>
+        </nav>
+      </div>
+    </header>
+
+
+    <!-- Hero -->
+    <div class="container">
+      <div id="heroImg" class="hero-img text-center container-fluid">
+        <h1 id="heroName" class="snakeColor"></h1>
+      </div>
+      <p id="photoName"></p>
+    </div>
+
+    <!-- main -->
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm"><img id="flag" class="flag" src="" /></div>
+          <div id="data-list" class="col-sm">
+            <p id="countryName"></p>
+            <ul id="output">
+
+            </ul>
           </div>
-      </header>
-      
-      
-        <!-- Hero -->
-        <div class="container">
-          <div id="heroImg" class="hero-img text-center container-fluid">
-            <h1 id="heroName" class="snakeColor"></h1>
-          </div>
-           <p id = "photoName"></p>
-        </div>
-       
-      <!-- main -->
-        <main>
-          <div class="container">
-              <div class="row">
-              <div class="col-sm"><img id="flag" class="flag" src = "" /></div>
-              <div id="data-list" class="col-sm">
-                  <p id="countryName"></p>
-                  <ul id="output">
-                      
-                  </ul>
-              </div>
-              
-            <div id="map" class="map"></div>
-            <div class="card">
-              <div class="card-header snakeColor" id='cardName'>
-                <p id='capitalWeather'></p>
-              </div>
-              <div class="card-body">
-                <img class="card-title" id='weatherImage' src="">
-                <ul id="weatherOutput">
-                  
-                </ul>
-              </div>
+
+          <div id="map" class="map"></div>
+          <div class="card">
+            <div class="card-header snakeColor" id="cardName">
+              <p id='capitalWeather'></p>
+            </div>
+            <div class="card-body">
+              <img class="card-title" id='weatherImage' src="">
+              <ul id="weatherOutput">
+
+              </ul>
             </div>
           </div>
-          
-        </main>
-  <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
+        </div>
+      </div>
+
+    </main>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title snakeColor" id="staticBackdropLabel">Features</h5>
-              <button type="button" class="close snakeColor" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
+            <h5 class="modal-title snakeColor" id="staticBackdropLabel">Features</h5>
+            <button type="button" class="close snakeColor" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div class="modal-body">
-              <ol>
-                  <li class="p-2">Feature</li>
-                  <li class="p-2">Feature</li>
-              </ol>
+            <ol>
+              <li class="p-2">Feature</li>
+              <li class="p-2">Feature</li>
+            </ol>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary snakeButton" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary snakeButton" data-dismiss="modal">Close</button>
           </div>
-      </div>
-  </div>
-</div>
-
-      <!-- footer -->
-        <footer class="mastfoot mt-auto">
-          <div class="inner">
-              <p>Created with <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="about_us.html">Team H-Town</a></p>
-          </div>
-        </footer>
+        </div>
       </div>
     </div>
-  </body>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  <script
-    defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjfsBIH4TwxsEDAV-nFdUdL0UJySGp5AM&callback=initMap"
-  ></script>
-  <script src="js/get.js"></script>
-  <script src="js/mappage.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-  
-</html>
 
+    <!-- footer -->
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>Created with <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="about_us.html">Team H-Town</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjfsBIH4TwxsEDAV-nFdUdL0UJySGp5AM&callback=initMap"></script>
+<script src="js/get.js"></script>
+<script src="js/mappage.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+
+</html>
