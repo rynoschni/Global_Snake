@@ -10,7 +10,7 @@ submitButton.addEventListener("click", function (event) {
   event.preventDefault();
   var windowFeatures = "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0"
   var name = searchCountry.value;
-  if (name != "") {
+  if (name != "" && name==searchCountry) {
     var windowFeatures =
       "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
     window.name = "main";
