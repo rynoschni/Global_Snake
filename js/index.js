@@ -59,7 +59,7 @@ const clickedMatch = (matches) => {
       }
     });
     searchCountry.addEventListener("click", function(event) {  //Ryan Reopen search list on backspace
-      matchList.classList.remove("hide");
+      matchList.classList.toggle("hide");
     });
   });
 };

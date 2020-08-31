@@ -88,12 +88,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
       let humidity = response.main.humidity;
       
       let weatherItem1 = document.createElement("li");
+      weatherItem1.classList.add("none");
       weatherItem1.innerHTML = "Temperature is: " + temperature.toFixed() + " ℉	";
       weatherOutput.appendChild(weatherItem1);
       let weatherItem2 = document.createElement("li");
+      weatherItem2.classList.add("none");
       weatherItem2.innerHTML = "Temperature feels like is: " + feelsLike.toFixed() + " ℉	";
       weatherOutput.appendChild(weatherItem2);
       let weatherItem3 = document.createElement("li");
+      weatherItem3.classList.add("none");
       weatherItem3.innerHTML = "Humidity is: " + humidity + " %";
       weatherOutput.appendChild(weatherItem3);
     });
