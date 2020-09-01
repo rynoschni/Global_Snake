@@ -11,8 +11,22 @@ let outputList = document.getElementById("output");
 let weatherButton = document.getElementById("weatherButton");
 let weatherOutput = document.getElementById('weatherOutput');
 let cardTitle = document.getElementById('cardTitle');
+const anotherCountry = document.getElementById('anotherCountry');
 
-
+submitButton.addEventListener("click", function (event) {
+  event.preventDefault();
+  var windowFeatures =
+    "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
+  var name = anotherCountry.value;
+  if (name != "") {
+    var windowFeatures =
+      "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
+    window.name = "main";
+    window.open("mappage.html?name=" + encodeURI(name), "main", windowFeatures);
+  } else {
+    alert("Please enter a country");
+  }
+});
 
 // This is the original map when page loads
 let map;
@@ -151,6 +165,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
     newListitem4.classList.add('none');
     newListitem4.innerHTML = "Language: " + language;
     outputList.appendChild(newListitem4);
+    //Wiki
+    const newListitem10 = document.createElement("a");
+    newListitem10.classList.add('snakeColor');
+    newListitem10.innerHTML = "Search for " + decodeURI(name)+" on Wikipedia";
+    newListitem10.href = "https://en.wikipedia.org/wiki/" + name;
+    outputList.appendChild(newListitem10);
 
   });
 
