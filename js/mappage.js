@@ -4,24 +4,33 @@
 var name = getQueryVariable("name");
 
 // Submit Button Event for another country page load at top of page
-submitButton.addEventListener("click", function (event) {
+anotherRandom.addEventListener("click", function (event) {
+  const anotherRandom = document.getElementById('anotherRandom');
   event.preventDefault();
-  // Snake Another input at top of page
-  const anotherCountry = document.getElementById('anotherCountry');
-  // Intializing window open based on another coutry input
-  var windowFeatures =
-    "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
-  var name = anotherCountry.value;
-  // Checking if country name input is empty string
-  if (name != "") {
+  const randomCountryUrl = `https://restcountries.eu/rest/v2/all?fields=name`;
+  get(randomCountryUrl).then(function (response) {
+    // Assigning response to array
+    let nameArray = response;
+    // Taking the array and returning a random country
+    let randomCountry = nameArray[Math.floor(Math.random() * nameArray.length)];
+    let randomCountryName = randomCountry.name;
+    // Taking random country from array and populating Mappage.html with random country
     var windowFeatures =
       "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
-    window.name = "main";
-    // Opening mappage.html based on country name input
-    window.open("mappage.html?name=" + encodeURI(name), "main", windowFeatures);
-  } else {
-    alert("Please enter a country");
-  }
+    var name = randomCountryName;
+    if (name != "") {
+      var windowFeatures =
+        "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
+      window.name = "main";
+      window.open(
+        "mappage.html?name=" + encodeURI(name),
+        "main",
+        windowFeatures
+      );
+    } else {
+      alert("Please enter a country");
+    }
+  });
 });
 
 
@@ -199,6 +208,59 @@ window.addEventListener("DOMContentLoaded", (event) => {
   if (name == 'Palestine,%20State%20of'){
     search  = ''
   }
+  if (name == 'Tuvalu'){
+    search  = 'island'
+  }
+  if (name == 'Saint%20Helena,%20Ascension%20and%20Tristan%20da%20Cunha'){
+    search  = 'island'
+  }
+  if (name == 'Palau'){
+    search  = 'island'
+  }
+  if (name == 'Virgin%20Islands%20(British)'){
+    search  = 'island'
+  }
+  if (name == 'Mauritania'){
+    search  = 'desert'
+  }
+  if (name == 'Chad'){
+    search  = 'jungle'
+  }
+  if (name == 'South%20Sudan'){
+    search  = 'jungle'
+  }
+  if (name == 'Liberia'){
+    search  = 'lion'
+  }
+  if (name == 'French%20Southern%20Territories'){
+    search  = 'island'
+  }
+  if (name == 'Mayotte'){
+    search  = 'lemur'
+  }
+  if (name == 'Guadeloupe'){
+    search  = 'island'
+  }
+  if (name == 'Zimbabwe'){
+    search  = 'zebra'
+  }
+  if (name == 'Swaziland'){
+    search  = 'giraffe'
+  }
+  if (name == 'Anguilla'){
+    search  = 'coastal'
+  }
+  if (name == "Lao%20People's%20Democratic%20Republic"){
+    search  = 'island'
+  }
+  if (name == "Kyrgyzstan"){
+    search  = 'baltic'
+  }
+  if (name == "Tonga"){
+    search  = 'coastal'
+  }
+  
+  
   // Using the GET method to pass authorization and obtain url and photogrpaher name from Pexels
   imageSearch (api_key,search);
   
