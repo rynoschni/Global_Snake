@@ -115,6 +115,10 @@ a:hover {
         float: right;
     }
 }
+.searchHead{
+    display: flex;
+    flex-wrap: nowrap;
+}
 
 
 
