@@ -111,6 +111,23 @@ randomCountryButton.addEventListener("click", function (event) {
   });
 });
 
+//Random Toast Messages
+
+document.addEventListener('DOMContentLoaded', (e) => {
+  const myToast = document.getElementById('myToast');
+  const myToastBody = document.getElementById('myToastBody');
+  let toastMessages = ["Snake Jodgel just found his hiding spot!", "Yelrac Zil defeats Snake Jodgel and found a vacation spot!", "Ron Sheid found his practice location to test his Bitch Slap"]
+  let randomMessage = toastMessages[Math.floor(Math.random() * toastMessages.length)];
+  let myToastRandom = randomMessage;
+// console.log(randomMessage)
+  myToastBody.innerHTML = myToastRandom;
+  $(myToast).toast({
+    autohide: false
+  });
+  $(myToast).toast('show');
+
+});
+
 console.log("Global Snake Awesomeness Loaded!!!!!")
 console.log("Designed by Team H-Town!")
 console.log("See About Us!")
