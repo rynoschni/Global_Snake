@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
   <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="masthead">
       <div class="inner">
@@ -18,9 +19,11 @@
           <h3 class="masthead-brand">Global <span class="snakeColor">Snake</span></h3>
         </a>
         <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link active" href="index.html">Home</a>
-          <a class="nav-link" data-toggle="modal" data-target="#staticBackdrop">Features</a>
-          <a class="nav-link" href="about_us.html">About Us</a>
+          <input id="anotherCountry" class="form-control mr-4 searchHead" type="text" placeholder="Snake Another?" aria-label="Search">
+          <button id="submitButton" class="btn btn-outline-success my-2 mr-4 my-sm-0" type="submit">Search</button>
+            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link" data-toggle="modal" data-target="#staticBackdrop">Features</a>
+            <a class="nav-link" href="about_us.html">About Us</a>
         </nav>
       </div>
     </header>
@@ -29,7 +32,9 @@
     <!-- Hero -->
     <div class="container">
       <div id="heroImg" class="hero-img text-center container-fluid">
-        <h1 id="heroName" class="snakeColor"></h1>
+        <div class="backdrop">
+          <h1 style="margin:20px;"id="heroName" class="snakeColor"></h1>
+        </div>
       </div>
       <p id="photoName"></p>
     </div>
@@ -45,7 +50,7 @@
 
             </ul>
           </div>
-
+        <div class='container'>
           <div id="map" class="map"></div>
           <div class="card">
             <div class="card-header snakeColor" id="cardName">
@@ -58,6 +63,8 @@
               </ul>
             </div>
           </div>
+
+        </div>
         </div>
       </div>
 
@@ -75,8 +82,10 @@
           </div>
           <div class="modal-body">
             <ol>
-              <li class="p-2">Feature</li>
-              <li class="p-2">Feature</li>
+              <li class="p-2"><span class="snakeColor"><strong>Snake Intel:</strong></span> info on country</li>
+              <li class="p-2"><span class="snakeColor"><strong>Snake Vision:</strong></span> maps and pictures</li>
+              <li class="p-2"><span class="snakeColor"><strong>Snake Sense:</strong></span> weather in the capital</li>
+              <li class="p-2"><span class="snakeColor"><strong>Random Snake:</strong></span> randomly search on countries</li>
             </ol>
           </div>
           <div class="modal-footer">
@@ -96,8 +105,10 @@
   </div>
   </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
   integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
@@ -106,7 +117,6 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjfsBIH4TwxsEDAV-nFdUdL0UJySGp5AM&callback=initMap"></script>
 <script src="js/get.js"></script>
 <script src="js/mappage.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
+
 
 </html>
