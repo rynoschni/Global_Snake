@@ -119,7 +119,7 @@ a:hover {
 }
 .searchHead{
     display: flex;
-    flex-wrap: nowrap;
+    
 }
 
 
@@ -151,7 +151,6 @@ a:hover {
     padding: 2rem 1rem;
     margin-bottom: 2rem;
 }
-
 
 /* Main */
 .map {
@@ -204,6 +203,3 @@ a:hover {
     color: rgba(255, 255, 255, .5);
     text-align: center;
 }
-
-
-

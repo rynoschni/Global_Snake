@@ -24,6 +24,7 @@ submitButton.addEventListener("click", function (event) {
   }
 });
 
+
 // This is the original map when page loads
 let map;
 let marker;
@@ -68,12 +69,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     
     
-    // 
+    // reassigning HTML %20 to normal string space
     if(name.includes("%20")) {
       heroName.innerHTML = "Welcome to The " + decodeURI(name) + "!";
     } else {
       heroName.innerHTML = "Welcome to " + decodeURI(name) + "!";
     }
+    // APi query reponse items
+    // Name, capital, latlng, currencies.name, languages.name, flag, callingCodes, population, subregion
+    // Assigning latitude / longitude / capital city / callingcode / population / subregion / flagID / flagIMG from API response
     let latitude = response[0].latlng[0];
     let longitude = response[0].latlng[1];
     let capital = response[0].capital;
@@ -91,10 +95,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
     let flagId = document.getElementById("flag");
     flagId.src = response[0].flag;
 
-    // Creating new map off of API query
+    // GET query from openweather API
     const weatherInfo = get(
       `https://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=e58d1190d081f10a3da11806b105613b&units=imperial`
     );
+    // Assigning repsonse to variable
+    // APi query reponse items Temperature, Capital, Temperature Feels like, Humidity
     weatherInfo.then((response) => {
       console.log(response);
       const capitalWeather = document.getElementById('capitalWeather');
@@ -105,6 +111,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       let temperature = response.main.temp;
       let feelsLike = response.main.feels_like;
       let humidity = response.main.humidity;
+      // Appending weather api resonses to list elements
       let weatherItem1 = document.createElement("li");
       weatherItem1.classList.add("none");
       weatherItem1.innerHTML = "Temperature is: " + temperature.toFixed() + " ℉	";
@@ -118,8 +125,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
       weatherItem3.innerHTML = "Humidity is: " + humidity + " %";
       weatherOutput.appendChild(weatherItem3);
     });
-    // APi query reponse items
-    // Name, capital, latlng, currencies.name, languages.name, flag, callingCodes, population, subregion
+    // Creating new map off of API query (coutry)
+    // Latitude and Longitude bases on country
     var position = {lat: latitude, lng: longitude};
     map = new google.maps.Map(document.getElementById("map"), {
       center: { lat: latitude, lng: longitude },
@@ -127,25 +134,30 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
     marker = new google.maps.Marker({position: position, map: map});
 
-    // DOM Manipulation
+    // DOM Manipulation / Appending RESTcountries API information to DOM
     let outputList = document.getElementById("output");
     let outputList1 = document.getElementById("output1");
+    // Latitude
     const newListitem1 = document.createElement("li");
     newListitem1.classList.add('none');
     newListitem1.innerHTML = "Latitude: " + latitude;
     outputList.appendChild(newListitem1);
+    // Longtitude
     const newListitem6 = document.createElement("li");
     newListitem6.classList.add('none');
     newListitem6.innerHTML = "Longtitude: " + longitude;
     outputList.appendChild(newListitem6);
+    // Calling code
     const newListitem7 = document.createElement("li");
     newListitem7.classList.add('none');
     newListitem7.innerHTML = "Calling code: " + callingCode;
     outputList.appendChild(newListitem7);
+    // Population
     const newListitem8 = document.createElement("li");
     newListitem8.innerHTML = "Population: " + Population.toLocaleString();
     newListitem8.classList.add('none');
     outputList.appendChild(newListitem8);
+    // Sub-region
     const newListitem9 = document.createElement("li");
     newListitem9.classList.add('none');
     newListitem9.innerHTML = "Sub-region: " + Subregion;
@@ -155,17 +167,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
     newListitem2.classList.add('none');
     newListitem2.innerHTML = "Capital: " + capital;
     outputList1.appendChild(newListitem2);
-    // currency
+    // Currency
     const newListitem3 = document.createElement("li");
     newListitem3.classList.add('none');
     newListitem3.innerHTML = "Currency: " + currency;
     outputList1.appendChild(newListitem3);
-    // language
+    // Language
     const newListitem4 = document.createElement("li");
     newListitem4.classList.add('none');
     newListitem4.innerHTML = "Language: " + language;
     outputList1.appendChild(newListitem4);
-    //Wiki
+    //Wiki link for more information on country
     const newListitem10 = document.createElement("a");
     newListitem10.classList.add('snakeColor');
     newListitem10.innerHTML = "Search for " + decodeURI(name)+" on Wikipedia";
@@ -191,9 +203,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
   imageSearch (api_key,search);
   
 });
-
+// Pexel API image search to append to main Hero at the top of Mappage.html
 function imageSearch (api_key,search) {
- 
+//  AJAX reqest for pexel API
   $.ajax({
     method: 'GET',
     beforeSend: function (xhr) {
