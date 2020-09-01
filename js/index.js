@@ -116,16 +116,18 @@ randomCountryButton.addEventListener("click", function (event) {
 document.addEventListener('DOMContentLoaded', (e) => {
   const myToast = document.getElementById('myToast');
   const myToastBody = document.getElementById('myToastBody');
-  let toastMessages = ["Snake Jodgel just found his hiding spot!", "Yelrac Zil defeats Snake Jodgel and found a vacation spot!", "Ron Sheid found his practice location to test his Bitch Slap"]
-  let randomMessage = toastMessages[Math.floor(Math.random() * toastMessages.length)];
-  let myToastRandom = randomMessage;
+  let toastMessages = ["Snake Jodgel just found his hiding spot in Kazakhstan! ", "Yelrac Zil defeats Snake Jodgel and found a vacation spot in Belize!", "Ron Sheid found his practice location to test his Bitch Slap in Iceland!", "DigitalNomad escaped the Hurricane in Canada!",]
 // console.log(randomMessage)
-  myToastBody.innerHTML = myToastRandom;
+  
+  setInterval(() =>{
+    let randomMessage = toastMessages[Math.floor(Math.random() * toastMessages.length)];
+    let myToastRandom = randomMessage;
+    myToastBody.innerHTML = myToastRandom;
   $(myToast).toast({
-    autohide: false
+    delay: 8000
   });
   $(myToast).toast('show');
-
+  }, 10000);
 });
 
 console.log("Global Snake Awesomeness Loaded!!!!!")
