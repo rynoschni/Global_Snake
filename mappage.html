@@ -29,20 +29,25 @@
     <!-- Hero -->
     <div class="container">
       <div id="heroImg" class="hero-img text-center container-fluid">
-        <h1 id="heroName" class="snakeColor"></h1>
+        <div style = "background-color:rgba(49,49,49,0.65);border-radius:5px;" class="backdrop">
+          <h1 style="margin:20px;"id="heroName" class="snakeColor"></h1>
+          <p id="photoName"></p>
+        </div>
+        
       </div>
-      <p id="photoName"></p>
+      
     </div>
 
     <!-- main -->
     <main>
       <div class="container">
         <div class="row">
-          <div class="col-sm"><img id="flag" class="flag" src="" /></div>
-          <div id="data-list" class="col-sm">
+          <div style="border-radius: 5px;background-color:rgba(49,49,49,0.65);padding-left: 0; display: flex;flex-wrap:wrap;justify-content: start;margin-bottom:1rem;"id="data-list" class="col-md">
             <p id="countryName"></p>
-            <ul id="output">
-
+            <img id="flag" class="flag" src="" />
+            <ul style="margin-top:1rem;" id="output">
+            </ul>
+            <ul style="margin-top:1rem;" id="output1">
             </ul>
           </div>
 
@@ -96,8 +101,10 @@
   </div>
   </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
   integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
@@ -106,7 +113,6 @@
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjfsBIH4TwxsEDAV-nFdUdL0UJySGp5AM&callback=initMap"></script>
 <script src="js/get.js"></script>
 <script src="js/mappage.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
+
 
 </html>

@@ -152,8 +152,16 @@ a:hover {
 }
 
 .flag {
-    height: 200px;
+    /* height: 200px; */
+    /* height: 12.5rem; */
+    padding-top:0.75rem;
+    height: 10rem;
     width: auto;
+    margin-bottom:1rem;
+    margin-left: 0.75rem;
+    /* display:flex;
+    flex-direction: column-reverse;
+    justify-content: start; */
 }
 
 .card {

@@ -8,6 +8,7 @@ const heroImg = document.getElementById("heroImg");
 const photoName = document.getElementById("photoName");
 let dataList = document.getElementById("data-list");
 let outputList = document.getElementById("output");
+let outputList1 = document.getElementById("output1");
 let weatherButton = document.getElementById("weatherButton");
 let weatherOutput = document.getElementById('weatherOutput');
 let cardTitle = document.getElementById('cardTitle');
@@ -92,7 +93,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
       let temperature = response.main.temp;
       let feelsLike = response.main.feels_like;
       let humidity = response.main.humidity;
-      
       let weatherItem1 = document.createElement("li");
       weatherItem1.classList.add("none");
       weatherItem1.innerHTML = "Temperature is: " + temperature.toFixed() + " ℉	";
@@ -140,17 +140,24 @@ window.addEventListener("DOMContentLoaded", (event) => {
     const newListitem2 = document.createElement("li");
     newListitem2.classList.add('none');
     newListitem2.innerHTML = "Capital: " + capital;
-    outputList.appendChild(newListitem2);
+    outputList1.appendChild(newListitem2);
     // currency
     const newListitem3 = document.createElement("li");
     newListitem3.classList.add('none');
     newListitem3.innerHTML = "Currency: " + currency;
-    outputList.appendChild(newListitem3);
+    outputList1.appendChild(newListitem3);
     // language
     const newListitem4 = document.createElement("li");
     newListitem4.classList.add('none');
     newListitem4.innerHTML = "Language: " + language;
-    outputList.appendChild(newListitem4);
+    outputList1.appendChild(newListitem4);
+    //Wiki
+    const newListitem10 = document.createElement("a");
+    newListitem10.classList.add('snakeColor');
+    newListitem10.innerHTML = "Search for " + decodeURI(name)+" on Wikipedia";
+    newListitem10.href = "https://en.wikipedia.org/wiki/" + name;
+    newListitem10.target = "_blank"
+    outputList1.appendChild(newListitem10);
 
   });
 
