@@ -14,7 +14,21 @@ submitButton.addEventListener("click", function (event) {
   //creates the ability to open search in new window on click
   var windowFeatures = "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0"
   var name = searchCountry.value;
-  //sends the search country name to the API and opens a new page
+  // const url = `https://restcountries.eu/rest/v2/all?fields=name`;
+  // get(url).then(function (response) {
+  //   //Assigning the JSON response as an array
+  //   const states = response;
+  //   const capName = name.charAt(0).toUpperCase() + name.slice(1);
+  //   console.log('This is name:',capName);
+  //   const isMatch = 0
+  //   let result = states.filter((state) => {
+  //     if (capName == state){
+  //       isMatch = 1;
+  //     }
+  //   });
+  //   console.log("This is the filter result:", isMatch);
+  // });
+  // sends the search country name to the API and opens a new page
   if (name != "") {
     var windowFeatures =
       "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
