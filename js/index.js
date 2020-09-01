@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 // console.log(randomMessage)
   myToastBody.innerHTML = myToastRandom;
   $(myToast).toast({
-    delay: 8000
+    autohide: false
   });
   $(myToast).toast('show');
 

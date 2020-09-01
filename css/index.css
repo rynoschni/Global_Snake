@@ -195,6 +195,17 @@ a:hover {
     display: none;
 }
 
+.toast{
+    max-height: 110px;
+}
+
+/* .toast-header{
+    background-color: rgb(20,37,19)
+} */
+
+.toast-body{
+    color: #333;
+}
 
 /*
  * Footer
