@@ -1,28 +1,23 @@
 "use strict";
 
+// Get the country name from the index.html page
+var name = getQueryVariable("name");
 
-
-const searchCountry = document.getElementById("searchCountry");
-let countryName = document.querySelectorAll("#countryName");
-const heroImg = document.getElementById("heroImg");
-const photoName = document.getElementById("photoName");
-let dataList = document.getElementById("data-list");
-let outputList = document.getElementById("output");
-let outputList1 = document.getElementById("output1");
-let weatherButton = document.getElementById("weatherButton");
-let weatherOutput = document.getElementById('weatherOutput');
-let cardTitle = document.getElementById('cardTitle');
-const anotherCountry = document.getElementById('anotherCountry');
-
+// Submit Button Event for another country page load at top of page
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
+  // Snake Another input at top of page
+  const anotherCountry = document.getElementById('anotherCountry');
+  // Intializing window open based on another coutry input
   var windowFeatures =
     "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
   var name = anotherCountry.value;
+  // Checking if country name input is empty string
   if (name != "") {
     var windowFeatures =
       "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
     window.name = "main";
+    // Opening mappage.html based on country name input
     window.open("mappage.html?name=" + encodeURI(name), "main", windowFeatures);
   } else {
     alert("Please enter a country");
@@ -33,6 +28,7 @@ submitButton.addEventListener("click", function (event) {
 let map;
 let marker;
 function initMap() {
+  // Initializing new google map / center is based of latitude and longitude
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 0, lng: 20 },
     zoom: 4,
@@ -52,8 +48,7 @@ function getQueryVariable(variable) {
   return false;
 }
 
-// Get the country name from the index.html page
-var name = getQueryVariable("name");
+
 
 //Event listner for DOM content, when the page loads
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -62,16 +57,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
   const url = `https://restcountries.eu/rest/v2/name/${name}`;
   get(url).then(function (response) {
     //re-assign the lat/long from response
+    let countryName = document.querySelectorAll("#countryName");
     countryName.innerHTML = name;
     console.log('The Name is: ', name)
     console.log("The Country Name is:", countryName)
+    // Assigning country name to main hero at the top
     let titleName = document.getElementById('titleName');
     titleName.innerHTML = "Welcome to " + decodeURI(name) + "!";
     let heroName = document.getElementById('heroName');
 
     
     
-    
+    // 
     if(name.includes("%20")) {
       heroName.innerHTML = "Welcome to The " + decodeURI(name) + "!";
     } else {
@@ -103,6 +100,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       const capitalWeather = document.getElementById('capitalWeather');
       capitalWeather.innerHTML = "The Weather for " + response.name + ', ' + decodeURI(name) + ':';
       weatherImage.src = `icons/${response.weather[0].icon}.png`;
+      let weatherOutput = document.getElementById('weatherOutput');
       let capitalName = response.name;
       let temperature = response.main.temp;
       let feelsLike = response.main.feels_like;
@@ -130,6 +128,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
     marker = new google.maps.Marker({position: position, map: map});
 
     // DOM Manipulation
+    let outputList = document.getElementById("output");
+    let outputList1 = document.getElementById("output1");
     const newListitem1 = document.createElement("li");
     newListitem1.classList.add('none');
     newListitem1.innerHTML = "Latitude: " + latitude;
@@ -201,6 +201,8 @@ function imageSearch (api_key,search) {
     },
     url: "https://api.pexels.com/v1/search?query="+search+"&per_page=1&page=1",
     success: function(data){
+      const photoName = document.getElementById("photoName");
+      const heroImg = document.getElementById("heroImg");
       heroImg.style.backgroundImage = `url(${data.photos[0].src.landscape})`
       photoName.innerHTML = "Photo by: " + `${data.photos[0].photographer}`
     },
@@ -210,23 +212,3 @@ function imageSearch (api_key,search) {
 })
 
 }
-// const proxy = 'https://cors-anywhere.herokuapp.com/';
-// const getPexel = (name) => {
-//   fetch(`${proxy}http://api.pexels.com/v1/${name}`, {
-//     headers:{
-//       'Authorization': '563492ad6f91700001000001fd27eec53df544ec959a1d51252c000e'
-//     }
-//   })
-//     .then(response => response.json())
-//     .then(response => console.log(response))
-  
-// }
-// const temperature = response.main.temp;
-// const feelsLike = response.main.feels_like;
-// const humidity = repsonse.main.humidity;
-// Weather information
-// openweather api key = e58d1190d081f10a3da11806b105613b
-
-
-//Pexel Key
-//563492ad6f91700001000001fd27eec53df544ec959a1d51252c000e 

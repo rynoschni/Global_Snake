@@ -1,13 +1,14 @@
 "use strict";
 // Targeting the search box value  on index.html
 const searchCountry = document.getElementById("searchCountry");
-const submitButton = document.getElementById("submitButton");
+//creates the matchList
 const matchList = document.getElementById("matchList");
 const randomCountryButton = document.getElementById("randomCountry");
 
 // Add event listner to the Submit button
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
+  const submitButton = document.getElementById("submitButton");
   var windowFeatures = "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0"
   var name = searchCountry.value;
   if (name != "") {
@@ -116,8 +117,7 @@ randomCountryButton.addEventListener("click", function (event) {
 document.addEventListener('DOMContentLoaded', (e) => {
   const myToast = document.getElementById('myToast');
   const myToastBody = document.getElementById('myToastBody');
-  let toastMessages = ["Snake Jodgel just found his hiding spot in Kazakhstan! ", "Yelrac Zil defeats Snake Jodgel and found a vacation spot in Belize!", "Ron Sheid found his practice location to test his Bitch Slap in Iceland!", "DigitalNomad escaped the Hurricane in Canada!",]
-// console.log(randomMessage)
+  let toastMessages = ["Snake Jodgel just found his hiding spot in Kazakhstan! ", "Yelrac Zil defeats Snake Jodgel and found a vacation spot in Belize!", "Ron Sheid found his practice location to test his Bitch Slap in Iceland!", "DigitalNomad escaped the Hurricane in Canada!"," PsycoGoat Var jumped the fence in Ireland!"]
   
   setInterval(() =>{
     let randomMessage = toastMessages[Math.floor(Math.random() * toastMessages.length)];
