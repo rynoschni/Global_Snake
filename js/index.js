@@ -1,16 +1,20 @@
 "use strict";
 // Targeting the search box value  on index.html
 const searchCountry = document.getElementById("searchCountry");
-//creates the matchList
+//creates the matchList that we populate seach box
 const matchList = document.getElementById("matchList");
+//create the random search button
 const randomCountryButton = document.getElementById("randomCountry");
 
 // Add event listner to the Submit button
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
+  //create submit button
   const submitButton = document.getElementById("submitButton");
+  //creates the ability to open search in new window on click
   var windowFeatures = "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0"
   var name = searchCountry.value;
+  //sends the search country name to the API and opens a new page
   if (name != "") {
     var windowFeatures =
       "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
@@ -87,13 +91,17 @@ searchCountry.addEventListener("keyup", () =>
   getCountries(searchCountry.value)
 );
 
+// Button event that fires a random country to populate Mappage.html
 randomCountryButton.addEventListener("click", function (event) {
   event.preventDefault();
   const randomCountryUrl = `https://restcountries.eu/rest/v2/all?fields=name`;
   get(randomCountryUrl).then(function (response) {
+    // Assigning response to array
     let nameArray = response;
+    // Taking the array and returning a random country
     let randomCountry = nameArray[Math.floor(Math.random() * nameArray.length)];
     let randomCountryName = randomCountry.name;
+    // Taking random country from array and populating Mappage.html with random country
     var windowFeatures =
       "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
     var name = randomCountryName;
