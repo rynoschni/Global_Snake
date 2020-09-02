@@ -10,6 +10,12 @@ Global Snake is a website used to find interesting information  about any countr
 
 Information about countries you would like to travel to and the ability to learn about countries you did not know existed.
 
+## How to use?
+
+Starting from the homepage, the user is presented with two different options to begin discovering new countries. The first option is to use the input search box to find a specific country; this will redirect the user to a new page (Map page) and provide information relevant to the country they are searching. The second option available on the homepage is to search for a random country, this can be achieved by clicking the 'Search Random Country' button. 
+
+An additional capability is for the user to select random countries from the Map page after searching for a country, and continue the journey of learning about new countries. Additional tabs located in the top of the website assist the user with navigation through the different pages, including the About Us page.
+
 ## Challenges and Solutions
 Multiple API Calling
 - Challenge: Taking multiple API's and returning the data to the DOM through one event listener.
@@ -32,7 +38,7 @@ Multiple Custom Pages
     1. Pass data from the search box to a second search data display page
     2. Have custom styling and JavaScript for these separate pages.
 -  Solution:
-    1. Using an event listner on the Submit button, we were able to open a new page in the same window and pass the country name to the HTML string.  When retrieving the country name on the Map page, we were able to query the HTML string for the country name 
+    1. Using an event listener on the Submit button, we were able to open a new page in the same window and pass the country name to the HTML string.  When retrieving the country name on the Map page, we were able to query the HTML string for the country name 
     2. We created page specific CSS and JS files to handle this challenge.  This allowed the pages to load faster and not have unused code for that page.
       
 Branding
@@ -74,11 +80,6 @@ Google Maps Javascript API - https://developers.google.com/maps/documentation/ja
 Open Weather Map API - https://openweathermap.org/api <br />
 Pexels Image API - https://www.pexels.com/api
 ​
-## How to use?
-
-Starting from the homepage, the user is presented with two different options to begin discovering new countries. The first option is to use the input search box to find a specific country; this will redirect the user to a new page (Map page) and provide information relevant to the country they are searching. The second option available on the homepage is to search for a random country, this can be achieved by clicking the 'Search Random Country' button. 
-
-An additional capability is for the user to select random countries from the Map page after searching for a country, and continue the journey of learning about new countries. Additional tabs located in the top of the website assist the user with navigation through the different pages, including the About Us page.
 ​
 ## Credits
 
