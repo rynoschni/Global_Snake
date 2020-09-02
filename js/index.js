@@ -14,15 +14,31 @@ submitButton.addEventListener("click", function (event) {
   //creates the ability to open search in new window on click
   var windowFeatures = "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0"
   var name = searchCountry.value;
-  //sends the search country name to the API and opens a new page
-  if (name != "") {
-    var windowFeatures =
-      "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
-    window.name = "main";
-    window.open("mappage.html?name=" + encodeURI(name), "main", windowFeatures);
-  } else {
-    alert("Please enter a country");
-  }
+  const url = `https://restcountries.eu/rest/v2/all?fields=name`;
+  get(url).then(function (response) {
+    //Assigning the JSON response as an array
+    const states = response;
+    //Capitalize string input
+     const nameofCountry = name.toUpperCase();
+    // Exist check 
+    var existCheck = 0;
+    for (let i = 0; i < states.length; i++) {
+      if (states[i].name.toUpperCase() === nameofCountry) {
+        existCheck = 1;
+        name = states[i].name
+      }
+    }
+    console.log(nameofCountry, existCheck)
+    // sends the search country name to the API and opens a new page
+    if (name != "" && existCheck === 1) {
+      var windowFeatures =
+        "menubar=yes, width=1920, height=1080, top=0, screenX=0, screenY=0";
+      window.name = "main";
+      window.open("mappage.html?name=" + encodeURI(name), "main", windowFeatures);
+    } else {
+      alert("Please enter a country");
+    }
+  });
 });
 
 //Function to access API, filter results and assign value to DOM
@@ -32,8 +48,7 @@ const getCountries = (searchText) => {
   get(url).then(function (response) {
     //Assigning the JSON response as an array
     const states = response;
-
-    // Get Matches to current text input
+    // Get Matches to current text input g:global; i:insensitive
     let matches = states.filter((state) => {
       const regex = new RegExp(`^${searchText}`, "gi");
       return state.name.match(regex);
@@ -50,6 +65,19 @@ const getCountries = (searchText) => {
   });
 };
 
+//Function capitalize string 
+function titleCase(str) {
+  var splitStr = str.toLowerCase().split(' ');
+  for (var i = 0; i < splitStr.length; i++) {
+    // You do not need to check if i is larger than splitStr length, as your for does that for you
+    // Assign it back to the array
+    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+  }
+  // Directly return the joined string
+  return splitStr.join(' ');
+}
+
+
 //Assigns an event listener to each match, if match is clicked it assigns the value to the input value
 const clickedMatch = (matches) => {
   const matchArray = document.querySelectorAll("#suggestMatch");
@@ -59,12 +87,12 @@ const clickedMatch = (matches) => {
       searchCountry.value = suggestMatch.innerHTML;
       matchList.classList.toggle("hide");  //Ryan Add to hide search box
     });
-    searchCountry.addEventListener("keydown", function(event) {  //Ryan Reopen search list on backspace
+    searchCountry.addEventListener("keydown", function (event) {  //Ryan Reopen search list on backspace
       if (event.key === "Backspace" || event.key === "Delete") {
         matchList.classList.remove("hide");
       }
     });
-    searchCountry.addEventListener("click", function(event) {  //Ryan Reopen search list on backspace
+    searchCountry.addEventListener("click", function (event) {  //Ryan Reopen search list on backspace
       matchList.classList.toggle("hide");
     });
   });
@@ -125,16 +153,16 @@ randomCountryButton.addEventListener("click", function (event) {
 document.addEventListener('DOMContentLoaded', (e) => {
   const myToast = document.getElementById('myToast');
   const myToastBody = document.getElementById('myToastBody');
-  let toastMessages = ["Snake Jodgel just found his hiding spot in Kazakhstan! ", "Yelrac Zil defeats Snake Jodgel and found a vacation spot in Belize!", "Ron Sheid found his practice location to test his special slap in Iceland!", "DigitalNomad escaped the Hurricane in Canada!"," PsycoGoat Var jumped the fence in Ireland!", "Cave Dolon got a Corona and two Hurricanes for $20.20 in Mexico!"]
-  
-  setInterval(() =>{
+  let toastMessages = ["Snake Jodgel just found his hiding spot in Kazakhstan! ", "Yelrac Zil defeats Snake Jodgel and found a vacation spot in Belize!", "Ron Sheid found his practice location to test his special slap in Iceland!", "DigitalNomad escaped the Hurricane in Canada!", " PsycoGoat Var jumped the fence in Ireland!", "Cave Dolon got a Corona and two Hurricanes for $20.20 in Mexico!"]
+
+  setInterval(() => {
     let randomMessage = toastMessages[Math.floor(Math.random() * toastMessages.length)];
     let myToastRandom = randomMessage;
     myToastBody.innerHTML = myToastRandom;
-  $(myToast).toast({
-    delay: 8000
-  });
-  $(myToast).toast('show');
+    $(myToast).toast({
+      delay: 8000
+    });
+    $(myToast).toast('show');
   }, 10000);
 });
 
