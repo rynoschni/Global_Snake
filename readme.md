@@ -63,8 +63,8 @@ Search any random country on the planet and find information.
 ​
 ## Installation
 
-Clone Repository from https://github.com/rynoschni/teamHTownProject and run on your local machine.
-OR --
+Clone Repository from https://github.com/rynoschni/teamHTownProject and run on your local machine. <br />
+OR -- <br />
 Netlify deployment page - https://global-snake.netlify.app/
 ​
 ## API Reference
