@@ -69,9 +69,9 @@ Netlify deployment page - https://global-snake.netlify.app/
 ​
 ## API Reference
 
-​REST Countries API - https://restcountries.eu/
-Google Maps Javascript API - https://developers.google.com/maps/documentation/javascript/overview
-Open Weather Map API - https://openweathermap.org/api
+​REST Countries API - https://restcountries.eu/ <br />
+Google Maps Javascript API - https://developers.google.com/maps/documentation/javascript/overview <br />
+Open Weather Map API - https://openweathermap.org/api <br />
 Pexels Image API - https://www.pexels.com/api
 ​
 ## How to use?
