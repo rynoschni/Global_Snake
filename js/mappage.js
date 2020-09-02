@@ -259,6 +259,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
   if (name == "Tonga"){
     search  = 'coastal'
   }
+  if (name == "French Guiana"){
+    search  = 'coastal'
+  }
   
   
   // Using the GET method to pass authorization and obtain url and photogrpaher name from Pexels
