@@ -43,13 +43,13 @@ Branding
 
 ## Screenshots
 
-![Screenshot](https://github.com/rynoschni/teamHTownProject/ReadMe-Screenshots/Index.png)
-![Screenshot](https://github.com/rynoschni/teamHTownProject/ReadMe-Screenshots/Country-Page.png)
-![Screenshot](https://github.com/rynoschni/teamHTownProject/ReadMe-Screenshots/Country-Page-2.png)
-![Screenshot](https://github.com/rynoschni/teamHTownProject/ReadMe-Screenshots/Modal.png)
-![Screenshot](https://github.com/rynoschni/teamHTownProject/ReadMe-Screenshots/About-us.png)
-![Screenshot](https://github.com/rynoschni/teamHTownProject/ReadMe-Screenshots/Error-Handling.png)
-​![Screenshot](https://github.com/rynoschni/teamHTownProject/ReadMe-Screenshots/Toast-Message.png)
+![Screenshot](https://github.com/rynoschni/teamHTownProject/blob/master/ReadMe-Screenshots/Index.png)
+![Screenshot](https://github.com/rynoschni/teamHTownProject/blob/master/ReadMe-Screenshots/Country-Page.png)
+![Screenshot](https://github.com/rynoschni/teamHTownProject/blob/master/ReadMe-Screenshots/Country-Page-2.png)
+![Screenshot](https://github.com/rynoschni/teamHTownProject/blob/master/ReadMe-Screenshots/Modal.png)
+![Screenshot](https://github.com/rynoschni/teamHTownProject/blob/master/ReadMe-Screenshots/About-us.png)
+![Screenshot](https://github.com/rynoschni/teamHTownProject/blob/master/ReadMe-Screenshots/Error-Handling.png)
+​![Screenshot](https://github.com/rynoschni/teamHTownProject/blob/master/ReadMe-Screenshots/Toast-Message.png)
 ​
 <b>Built with</b>
 
