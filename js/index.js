@@ -148,24 +148,6 @@ randomCountryButton.addEventListener("click", function (event) {
   });
 });
 
-//Random Toast Messages
-
-document.addEventListener('DOMContentLoaded', (e) => {
-  const myToast = document.getElementById('myToast');
-  const myToastBody = document.getElementById('myToastBody');
-  let toastMessages = ["Snake Jodgel just found his hiding spot in Kazakhstan! ", "Yelrac Zil defeats Snake Jodgel and found a vacation spot in Belize!", "Ron Sheid found his practice location to test his special slap in Iceland!", "DigitalNomad escaped the Hurricane in Canada!", " PsycoGoat Var jumped the fence in Ireland!", "Cave Dolon got a Corona and two Hurricanes for $20.20 in Mexico!"]
-
-  setInterval(() => {
-    let randomMessage = toastMessages[Math.floor(Math.random() * toastMessages.length)];
-    let myToastRandom = randomMessage;
-    myToastBody.innerHTML = myToastRandom;
-    $(myToast).toast({
-      delay: 8000
-    });
-    $(myToast).toast('show');
-  }, 10000);
-});
-
 console.log("Global Snake Awesomeness Loaded!!!!!")
 console.log("Designed by Team H-Town!")
 console.log("See About Us!")
